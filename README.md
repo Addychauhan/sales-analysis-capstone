@@ -1,6 +1,6 @@
 # Sales Analysis Capstone
 
-End-to-end data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
+Data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
 
 ## Dataset
 
@@ -49,7 +49,7 @@ Predicts `Sales` from variables known before a deal closes (units, price, segmen
    pip install -r requirements.txt
    ```
 2. Open `Capstone_Analysis.ipynb` and run all cells (it reads `Sample_data.csv` from the same folder).
-3. To view the dashboard, open `power_bi_analysis.pbix` in Power BI Desktop (free, Windows only).
+3. To view the dashboard, open `power_bi_analysis.pbix` in Power BI Desktop.
 
 ## How the Power BI dashboard was built
 
