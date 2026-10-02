@@ -1,27 +1,31 @@
 # Sales Analysis Capstone
 
-Data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
+End-to-end data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
 
 ## Dataset
 
-**Financial Sample** (`Sample_data.csv` / `clean_data.csv`) — 700 transactions from September 2013 to December 2014, covering 5 customer segments, 5 countries, and 6 products.
+**Financial Sample** — 700 transactions from September 2013 to December 2014, covering 5 customer segments, 5 countries, and 6 products.
 
 Columns: `Segment`, `Country`, `Product`, `Discount Band`, `Units Sold`, `Manufacturing Price`, `Sale Price`, `Gross Sales`, `Discounts`, `Sales`, `COGS`, `Profit`, `Date`, `Month Number`, `Month Name`, `Year`.
 
-## Files in this repo
+## Project structure
 
-| File | Description |
-|---|---|
-| `Sample_data.csv` | Raw source data |
-| `clean_data.csv` | Cleaned data (used by the notebook and the Power BI dashboard) |
-| `Capstone_Analysis.ipynb` | Main EDA + regression analysis notebook |
-| `eda.py` | EDA as a standalone script |
-| `model.py` | Regression model as a standalone script |
-| `sql_analysis.py` | SQL (SQLite) version of key queries |
-| `power_bi_analysis.pbix` | Power BI dashboard |
-| `Capstone_Report.pdf` | Findings & recommendations write-up |
-| `Financial_Sample_Capstone_Report.xlsx` | Excel workbook (tables + charts) |
-| `requirements.txt` | Python dependencies |
+```
+sales-analysis-capstone/
+├── README.md
+├── requirements.txt
+├── Capstone_Report.pdf                     # Findings & recommendations write-up
+├── Financial_Sample_Capstone_Report.xlsx   # Excel workbook (tables + charts)
+├── data/
+│   └── clean_data.csv                      # Cleaned data used by the notebook and dashboard
+├── notebook/
+│   ├── Capstone_Analysis.ipynb             # Main EDA + regression analysis
+│   ├── eda.py                              # EDA as a standalone script
+│   ├── model.py                            # Regression model as a standalone script
+│   └── sql_analysis.py                     # SQL (SQLite) version of key queries
+└── power-bi/
+    └── power_bi_analysis.pbix              # Power BI dashboard
+```
 
 ## Key results
 
@@ -48,12 +52,12 @@ Predicts `Sales` from variables known before a deal closes (units, price, segmen
    ```bash
    pip install -r requirements.txt
    ```
-2. Open `Capstone_Analysis.ipynb` and run all cells (it reads `Sample_data.csv` from the same folder).
-3. To view the dashboard, open `power_bi_analysis.pbix` in Power BI Desktop.
+2. Open `notebook/Capstone_Analysis.ipynb` and run all cells (it reads `../data/clean_data.csv`).
+3. To view the dashboard, open `power-bi/power_bi_analysis.pbix` in Power BI Desktop (free, Windows only).
 
 ## How the Power BI dashboard was built
 
-1. Power BI Desktop > Get data > Text/CSV > `clean_data.csv` > Load.
+1. Power BI Desktop > Get data > Text/CSV > `data/clean_data.csv` > Load.
 2. Add Card visuals: Sales (Sum), Profit (Sum), Units Sold (Sum).
 3. New measure: `Profit Margin = DIVIDE(SUM(clean_data[Profit]), SUM(clean_data[Sales]))`. Add as a Card, formatted as a percentage.
 4. Line chart: X-axis = Year, then Month Number (in that order). Values = Sales and Profit.
