@@ -1,6 +1,6 @@
 # Sales Analysis Capstone
 
-End-to-end data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
+Data analysis project on a financial sales dataset — exploratory data analysis (EDA), a regression model to predict sales, and an interactive Power BI dashboard.
 
 ## Dataset
 
